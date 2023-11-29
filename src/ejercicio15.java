@@ -33,9 +33,18 @@ public class ejercicio15 {
         int uwu=5/0;
       }
 
+      boolean resultado=false;
       if(salir!=true){
         for(int i=0;i<=9;i++){
-        if(ocupacion[i]+numpersonas<=4){
+        
+          for(int j=0;j<=9;j++){
+            if(ocupacion[j]==0){
+              ocupacion[j]=ocupacion[j]+numpersonas;
+              System.out.println("Por favor, sientese en la mesa numero: "+(j+1));
+              resultado=true;
+            }
+          }
+        if(ocupacion[i]+numpersonas<=4 &&resultado!=true){
           ocupacion[i]=ocupacion[i]+numpersonas;
           System.out.println("Por favor sientese en la mesa numero: " +(i+1));
           break;
